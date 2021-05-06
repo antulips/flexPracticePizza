@@ -31,6 +31,11 @@ header nav {
   display: flex;
 }
 
+header .hamburguesa {
+  display: none;
+}
+
+
 header nav ul {
   /*Añadimos flex*/
   display: flex;
@@ -64,11 +69,14 @@ main {
     /* Alto del main: alto viewport - alto Header - alto Footer 
        Me aseguro que el main ocupa todo el alto disponible */
     min-height: calc(100vh - 100px - 150px);  
+ 
 }
 
 main .container {
   /*Añadimos flex*/
   display: flex;
+  gap: 10px;
+
 }
 
 main section .card {
@@ -148,15 +156,30 @@ footer ul {
   color: var(--lightWhite);
   /*Añadimos flex*/
   display: flex;
+  gap: 10px;
   flex-direction: column;
   order: -1;
 }
 
-footer ul li {
-margin: 10px 0;
+footer ul li:first-child {
+  order: -2;
+}
+
+footer ul li:last-child {
+  order: -1;
 }
 
 @media screen and (max-width:  768px) {
    /* - Ocultar los botone de nav (del header)
-      - Añadir el ícono hamburguesa */
+      - Añadir el ícono hamburguesa */ 
+header nav {
+  display: none;
+}
+
+header .hamburguesa {
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
 }
