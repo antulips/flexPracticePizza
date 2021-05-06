@@ -60,36 +60,40 @@ header .header__logo span,
 footer .footer__logo span {
   color: var(--green);
 }
+
 header .header__logo span:nth-child(2),
 footer .footer__logo span:nth-child(2) {
   color: var(--red);
 }
+
 main {
     padding: 35px 0px;
     /* Alto del main: alto viewport - alto Header - alto Footer 
        Me aseguro que el main ocupa todo el alto disponible */
     min-height: calc(100vh - 100px - 150px);  
- 
-}
+    display: flex;
+    align-items: center;
+  }
 
 main .container {
   /*Añadimos flex*/
   display: flex;
   gap: 10px;
-
+  flex-grow: 1; 
 }
+
 
 main section .card {
   border-radius: 5px;
   height: 21.875rem; /* 350px/16px (16px=1rem) */
   width: 30.625rem;  /* 490px/16px (16px=1rem) */
-  flex-grow: 1;
 }
 
 main section .delivery {
-  background: url("../img/delivery.jpg");
   background-size: cover;
+  background: url("../img/delivery.jpg");
   color: var(--red);
+  flex-grow: 1; 
   font-size: 1.5rem;
   font-weight: bold;
   padding: 20px;
@@ -98,6 +102,7 @@ main section .delivery {
 main section .delivery span {
   color: var(--lightWhite);
 }
+
 main section .podio {
   background: #fff;
   font-weight: bold;
@@ -106,7 +111,9 @@ main section .podio {
   flex-direction: column;
   flex-basis: 490px;
   justify-content: space-around;
+  flex-grow: 1; 
 }
+
 main section .podio h3 {
   color: var(--red);
   font-size: 24px;
@@ -114,6 +121,7 @@ main section .podio h3 {
   padding: 26px;
   width: 100%;
 }
+
 .podio .top5 .podio__pizzas h4 {
   font-size: 20px;
   font-weight: bold;
@@ -123,6 +131,7 @@ main section .podio h3 {
 .top5 {
   /*Añadimos flex*/
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
 }
 
@@ -131,9 +140,9 @@ main section .podio h3 {
 }
 
 .top5 .podio__img {
-  padding-bottom: 60px;
   /*Añadimos flex*/
   display: flex;
+  align-items: center  ;
 }
 
 footer {
@@ -180,6 +189,15 @@ header .hamburguesa {
   display: flex;
   color: white;
   align-items: center;
+  font-size: 20px;
+}
+
+main .container {
+  /*Añadimos flex*/
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 100%;
 }
 
 }
